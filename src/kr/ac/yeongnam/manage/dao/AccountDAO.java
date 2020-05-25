@@ -205,6 +205,35 @@ public class AccountDAO {
 	}
 	
 	
+	public void accountAddUI(AccountVO account) {
+		conn = new ConnectionFactory().getConnection();
+		
+		try {
+			conn.setAutoCommit(false);
+			sql = new StringBuilder();
+			sql.append("INSERT INTO ACCOUNT(ACCOUNT_NO, BANK, ACCOUNT_HOLDER, BALANCE, ALIAS) ");
+			sql.append(" VALUES(?, ?, ?, ?, ?)");
+
+			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setString(1, account.getAccountNo());
+			pstmt.setString(2, account.getBank());
+			pstmt.setString(3, account.getAccountHolder());
+			pstmt.setInt(4, account.getBalance());
+			pstmt.setString(5, account.getAlias());
+			pstmt.executeUpdate();
+			conn.commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		} finally {
+			JDBCClose.close(conn, pstmt);
+		}
+	}
 	
 	/*
 	public void RegisterAccount(AccountVO account) {

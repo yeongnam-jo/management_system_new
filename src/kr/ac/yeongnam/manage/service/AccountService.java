@@ -43,6 +43,9 @@ public class AccountService {
 		return accountDAO.accountInfoBankUI(bank);
 	}
 	
+	public void accountAddUI(AccountVO account) {
+		accountDAO.accountAddUI(account);
+	}
 	
 	
 	
