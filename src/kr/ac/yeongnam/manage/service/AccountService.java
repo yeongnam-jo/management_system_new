@@ -10,7 +10,6 @@ import kr.ac.yeongnam.manage.vo.AccountVO;
 public class AccountService {
 	
 	private AccountDAO accountDAO;
-	// private UserDAO userDAO;
 	
 	public AccountService() {
 		accountDAO = new AccountDAO();
@@ -20,14 +19,8 @@ public class AccountService {
 		accountDAO.login(id,pw);
 	}
 	
-	
-//	public void login(String id, String pw, String msg) {
-//		userDAO.login(id, pw);
-//	}
-	
 	public void join(String id, String pw) {
 		accountDAO.join(id, pw);
-		//userDAO.login(id, pw);
 	}
 	
 	public List<AccountVO> accountInfoAllUI() {
@@ -47,64 +40,28 @@ public class AccountService {
 		accountDAO.accountAddUI(account);
 	}
 	
-	
-	
-	
-	/*
-	public void registerAccount(AccountVO account) {
-	
-		accountDAO.RegisterAccount(account);
-	}
-	
-	public boolean deleteAccount(String accountNo) {
-		
-		return accountDAO.DeleteAccount(accountNo);
-	}
-	
-	public boolean changeAccountAlias(String alias, String accountNo) {
-		
-		return accountDAO.ChangeAccountAlias(alias, accountNo);
+	public void accountUpdateUI(String accountNo, String alias) {
+		accountDAO.accountUpdateUI(accountNo, alias);
 	}
 
-	
-	public List<AccountVO> selectAllAccount() {
-		
-		return accountDAO.SelectAllAccount();
-	}
-	
-	public List<AccountVO> selectByBankName(String bankName) {
-		
-		return accountDAO.SelectByBankName(bankName);
+	public void accountDeleteUI(String accountNo) {
+		accountDAO.accountDeleteUI(accountNo);
 	}
 
-
-	public boolean withDraw(String accountNo, int money) {
-		return accountDAO.WithDraw(accountNo, money);
+	public void depositUI(String accountNo, long money) {
+		accountDAO.depositUI(accountNo, money);
 	}
 	
-	public boolean transfer(String accountNo, String destAccount, int Amount) {
-		
-		return accountDAO.Transfer(accountNo, destAccount, Amount);
+	public void transferUI(String accountNoFrom, long money, String accountNoTo) {
+		accountDAO.transferUI(accountNoFrom, money, accountNoTo);
 	}
 	
-	public boolean deposit(String accountNo, int money) {
-		
-		return accountDAO.Deposit(accountNo, money);
+	public void withrawUI(String accountNo, long money) {
+		accountDAO.withrawUI(accountNo, money);
 	}
 	
-	public int isExist(String accountNo) {
-	
-		return accountDAO.isExist(accountNo);
+	public void createAccountUI(String accountNo, String bank, String accountHolder, long firstMoney, String alias) {
+		accountDAO.createAccountUI(accountNo, bank, accountHolder, firstMoney, alias);
 	}
 	
-	public boolean isCorrect(String accountNo, int withDrawMoney) {
-		
-		return accountDAO.isCorrect(accountNo, withDrawMoney);
-	}
-
-	public boolean join(String id, String pw) {
-		return accountDAO.Join(id, pw);
-	}
-	*/
-
 }

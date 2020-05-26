@@ -17,7 +17,6 @@ public class ConnectionFactory {
 			String pwd = "tiger";
 			*/
 			
-			
 			String url = "jdbc:oracle:thin:@172.16.88.120:1521:dink";
 			String id = "DA09";
 			String pwd = "DA09";

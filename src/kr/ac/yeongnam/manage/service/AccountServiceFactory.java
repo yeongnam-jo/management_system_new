@@ -10,7 +10,6 @@ public class AccountServiceFactory {
 			service = new AccountService();
 		} 
 			
-		//계속 하나를 공유하도록 만드는 클래스이다.
 		return service;
 	}
 }

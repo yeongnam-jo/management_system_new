@@ -23,6 +23,13 @@ public class BaseUI implements IAccount {
 		return Integer.parseInt(sc.nextLine());
 	}
 	
+	protected long scanLong(String msg) {
+		System.out.println(msg);
+		long tmp = sc.nextLong();
+		sc.nextLine();
+		return tmp;
+	}
+	
 	protected String scanStr(String msg) {
 		System.out.println(msg);
 		return sc.nextLine();

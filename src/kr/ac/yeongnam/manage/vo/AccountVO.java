@@ -2,7 +2,6 @@ package kr.ac.yeongnam.manage.vo;
 //VO (Value Object) 클래스.
 
 public class AccountVO {
-	// private int    no; //계좌의 개수 번호
 	private String id; //아이디
 	private String pw; //비밀번호
 	private String bank; //은행명
@@ -10,7 +9,6 @@ public class AccountVO {
 	private String accountHolder; //계좌주명
 	private int    balance; //잔액
 	private String Alias; //별칭
-	// private String enrollDate; //가입일자
 	
 	public AccountVO() {
 		
@@ -71,5 +69,22 @@ public class AccountVO {
 		Alias = alias;
 	}
 
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getPw() {
+		return pw;
+	}
+
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+	
+	
 	
 }
